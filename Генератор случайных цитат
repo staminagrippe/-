@@ -1,0 +1,13 @@
+import random
+
+def load_quotes(filename):
+    with open(filename, 'r') as file:
+        quotes = [line.strip() for line in file.readlines()]
+    return quotes
+
+def get_random_quote(quotes):
+    return random.choice(quotes)
+
+if __name__ == "__main__":
+    quotes = load_quotes('quotes.txt')
+    print(get_random_quote(quotes))
